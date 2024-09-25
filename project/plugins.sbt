@@ -1,0 +1,8 @@
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.0.0")
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.0")
+addSbtPlugin("org.wartremover" % "sbt-wartremover" % "3.1.6")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.25")
+addSbtPlugin("io.gatling" % "gatling-sbt" % "3.2.2")
+addSbtPlugin("ch.epfl.scala" % "sbt-bloop" % "1.4.6")
+addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.10.0-RC1")
+addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.11.0")
