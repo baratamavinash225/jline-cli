@@ -26,7 +26,8 @@ object Settings {
 
   lazy val CliSettings: Seq[sbt.Def.Setting[_]] = commonSettings ++
     Seq(
-      libraryDependencies ++= CliDependencies
+      libraryDependencies ++= CliDependencies,
+      scalacOptions ++= ScalacOptions.commonScalacOptions
     )
 
   lazy val assemblySettings: Seq[sbt.Def.Setting[_]] = Seq(
@@ -35,11 +36,10 @@ object Settings {
     assembly / assemblyOption := (assembly / assemblyOption).value
       .withIncludeScala(true)
       .withIncludeDependency(true),
-
-      assembly / assemblyMergeStrategy := {
-        case PathList("META-INF", xs @ _*) => MergeStrategy.discard
-        case _                             => MergeStrategy.first
-      }
+    assembly / assemblyMergeStrategy := {
+      case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+      case _                             => MergeStrategy.first
+    }
   )
 
   lazy val publishArtifactSettings: Setting = Seq(
