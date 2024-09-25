@@ -2,9 +2,11 @@ package com.avinash.cli.app
 
 import com.avinash.cli.app.command.api.ApiCli
 import com.avinash.cli.app.command.hi.HiCli
+import com.avinash.cli.app.command.os.OsCli
 import com.avinash.cli.app.utils.CliMessageUtils.{
   apiPrompt,
   hiPrompt,
+  osPrompt,
   replHelp,
   unknownReplMessage,
   welcomeArt,
@@ -40,6 +42,7 @@ object CliApp extends App {
     r.readLine(PROMPT).toLowerCase.trim match {
       case ""           => r.readLine(PROMPT)
       case "exit"       => r.printAbove("Bye!!"); System.exit(0)
+      case "os"         => OsCli.executeCli(r, PROMPT + osPrompt)
       case "hi"         => HiCli.executeCli(r, PROMPT + hiPrompt)
       case "api"        => ApiCli.executeCli(r, PROMPT + apiPrompt)
       case "version"    => r.printAbove(s"${BuildInfo.version}")

@@ -16,21 +16,24 @@ object CliMessageUtils {
 
   lazy val hiPrompt = "hi> "
   lazy val apiPrompt = "api> "
+  lazy val osPrompt = "os> "
 
   lazy val unknownReplMessage = "Unknown command: \"%s\", run \"help/?\" for a list of commands"
 
   lazy val replHelp: String =
-    """CEF CLI REPL has several commands available:
+    """CLI REPL has several commands available:
       |
       |? help      print this help message
       |hi          One module in the CLI for the demo App.
       |api         One module in the CLI to call Api
+      |os          Get the details about the Operation System
+      |            from which CLI is running.
       |version     Print product version
       |exit        Exit the interpreter
       |""".stripMargin
 
   lazy val hiReplHelp: String =
-    """Stream REPL has several commands available:
+    """hi REPL has several commands available:
       |
       |? help                                                     print this help message
       |print <>                                                   prints the passed string
@@ -39,10 +42,21 @@ object CliMessageUtils {
       |""".stripMargin
 
   lazy val apiReplHelp: String =
-    """Batch REPL has several commands available:
+    """api REPL has several commands available:
       |
       |? help                                                      print this help message
       |call <>                                                     Calls the Api based on the input string passed.
+      |exit                                                        Exit the interpreter
+      |..                                                          Return to previous interpreter
+      |""".stripMargin
+
+  lazy val osReplHelp: String =
+    """os REPL has several commands available:
+      |
+      |? help                                                      print this help message
+      |name                                                        Prints the OS Name
+      |version                                                     Prints the OS Version
+      |arch                                                        Prints the OS Arch
       |exit                                                        Exit the interpreter
       |..                                                          Return to previous interpreter
       |""".stripMargin
