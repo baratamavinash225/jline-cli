@@ -10,7 +10,7 @@ object HiCli {
 
   @tailrec def executeCli(r: LineReader, PROMPT: String): Unit = {
     r.readLine(PROMPT).trim match {
-      case ""                =>
+      case "" =>
       case ".."              => CliApp.process(r, PROMPT.replace(hiPrompt, ""))
       case s"print ${sName}" => r.printAbove(HiClient.print(sName))
       case "exit"            => System.exit(0)
